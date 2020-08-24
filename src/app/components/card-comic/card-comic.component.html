@@ -1,10 +1,27 @@
 <ion-card>
-  <img src="./madison.jpg" />
-  <ion-card-header>
-    <ion-card-subtitle>Destination</ion-card-subtitle>
-    <ion-card-title>Madison, WI</ion-card-title>
+  <ion-card-header class="header-card">
+    <ion-thumbnail class="image-card">
+      <ion-img 
+        [src]="comic.thumbnail.path + '/portrait_incredible.' + comic.thumbnail.extension"
+        [alt]="comic.title"
+      >
+      </ion-img>
+    </ion-thumbnail>
+    <div class="container-information">
+      <ion-card-title class="title-card">{{comic.title}}</ion-card-title>
+      <ion-card-subtitle class="subtitle-card">{{comic.dates[0].date | date :'short'}}</ion-card-subtitle>
+    </div>
   </ion-card-header>
-  <ion-card-content>
-    Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
+  <ion-card-content class="content-card">
+    <div class="container-buttons">
+      <ion-button (click)="upLike()" color="success">
+        <ion-icon name="thumbs-up-sharp"></ion-icon>
+        <ion-label class="count count-success">{{comic.like}}</ion-label>
+      </ion-button>
+      <ion-button (click)="upDisLike()" color="danger">
+        <ion-icon name="thumbs-down-sharp"></ion-icon>
+        <ion-label class="count count-danger">{{comic.dislike}}</ion-label>
+      </ion-button>
+    </div>
   </ion-card-content>
 </ion-card>
