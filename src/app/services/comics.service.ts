@@ -1,9 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Plugins } from '@capacitor/core';
-
-const { Storage } = Plugins;
 
 // const environment
 const hostname        = environment.hostname;
@@ -20,15 +17,11 @@ export class ComicsService {
 
   // get data to comics
   async getComics() {
-		await this.http.get(`${ hostname }/${ version }/public/comics?ts=1&apikey=${ api_public_key }`).toPromise().then(data => {
-			return data;
-		});
-  }
-
-  async setItemStorage(key, value) {
-    await Storage.set({
-      key: key,
-      value: value
+    let dataComics;
+		await this.http.get(`${ hostname }/${ version }/public/comics?ts=1&apikey=${ api_public_key }&hash=${ api_hash }`).toPromise().then(data => {
+			dataComics = data;
     });
+    
+    return dataComics;
   }
 }
