@@ -1,0 +1,7 @@
+{
+  "name": "ionic-marvel-comics",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
