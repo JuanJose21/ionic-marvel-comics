@@ -18,13 +18,8 @@ export class CardComicComponent implements OnInit {
 
   ngOnInit() {}
 
-  upLike() {
-    this.comic.like++;
-    this.eventButtonClick.emit();
-  }
-
-  upDisLike() {
-    this.comic.dislike++;
+  upQualification(type) {
+    this.comic[type]++;
     this.eventButtonClick.emit();
   }
 }

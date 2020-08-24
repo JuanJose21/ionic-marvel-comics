@@ -14,11 +14,11 @@
   </ion-card-header>
   <ion-card-content class="content-card">
     <div class="container-buttons">
-      <ion-button (click)="upLike()" color="success">
+      <ion-button (click)="upQualification('like')" color="success">
         <ion-icon name="thumbs-up-sharp"></ion-icon>
         <ion-label class="count count-success">{{comic.like}}</ion-label>
       </ion-button>
-      <ion-button (click)="upDisLike()" color="danger">
+      <ion-button (click)="upQualification('dislike')" color="danger">
         <ion-icon name="thumbs-down-sharp"></ion-icon>
         <ion-label class="count count-danger">{{comic.dislike}}</ion-label>
       </ion-button>
