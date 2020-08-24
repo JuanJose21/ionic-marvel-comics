@@ -15,12 +15,16 @@
   <ion-card-content class="content-card">
     <div class="container-buttons">
       <ion-button (click)="upQualification('like')" color="success">
-        <ion-icon name="thumbs-up-sharp"></ion-icon>
-        <ion-label class="count count-success">{{comic.like}}</ion-label>
+        <div class="description-button">
+          <ion-icon name="thumbs-up-sharp"></ion-icon>
+          <ion-label class="count count-success">{{comic.like | number}}</ion-label>
+        </div>
       </ion-button>
       <ion-button (click)="upQualification('dislike')" color="danger">
-        <ion-icon name="thumbs-down-sharp"></ion-icon>
-        <ion-label class="count count-danger">{{comic.dislike}}</ion-label>
+        <div class="description-button">
+          <ion-icon name="thumbs-down-sharp"></ion-icon>
+          <ion-label class="count count-danger">{{comic.dislike | number}}</ion-label>
+        </div>
       </ion-button>
     </div>
   </ion-card-content>

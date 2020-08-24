@@ -13,15 +13,12 @@ import { ComicsService } from '../services/comics.service';
 export class HomePage {
 
   listComics:any;
+  validationSkeleton: boolean = true;
 
   constructor(private comicsService: ComicsService) {}
 
   ionViewWillEnter() {
     this.getComics();
-  }
-
-  async clear() {
-    await Storage.clear();
   }
 
   async getComics() {
@@ -39,6 +36,8 @@ export class HomePage {
     }
 
     this.listComics = JSON.parse(comicsStorage);
+
+    setTimeout(() => { this.validationSkeleton = false; }, 3000);    
   }
 
   async setItemStorage(key, value) {
@@ -53,8 +52,8 @@ export class HomePage {
     return value;
   }
 
-  // receives the event index and type (like - dislike)
-  async eventButtonClick(){
+  // update data to storage
+  async setItemsStorage(){
     await this.setItemStorage('comics',JSON.stringify(this.listComics));
   }
 
