@@ -1,11 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      <ion-img 
-        src="../../assets/images/marvel-logo.svg"
-        alt="marvel"
-        class="image-logo"
-      >
+      <ion-img src="../../assets/images/marvel-logo.svg" alt="marvel" class="imageLogo">
       </ion-img>
     </ion-title>
   </ion-toolbar>
@@ -13,21 +9,21 @@
 
 <ion-content [fullscreen]="true">
   <ion-grid>
-    <ion-row *ngIf="!validationSkeleton">
-      <ion-col size="6" size-lg="3" *ngFor="let comic of listComics; let i = index">
+    <ion-row *ngIf="!isSkeleton">
+      <ion-col size="6" size-md="4" size-lg="3" *ngFor="let comic of listComics; let i = index">
         <app-card-comic [comic]="comic" [index]="i" (eventButtonClick)="setItemsStorage($event)"></app-card-comic>
       </ion-col>
     </ion-row>
 
-    <ion-row *ngIf="validationSkeleton">
-      <ion-col size="6" size-lg="3" *ngFor="let data of [1,1,1,1,1,1,1,1,1,1,1,1]">
-        <ion-card class="skeleton-card">
-          <ion-card-header class="header-skeleton">
-            <ion-skeleton-text animated class="image-skeleton"></ion-skeleton-text>
+    <ion-row *ngIf="isSkeleton">
+      <ion-col size="6" size-md="4" size-lg="3" *ngFor="let data of [1,1,1,1,1,1,1,1,1,1,1,1]">
+        <ion-card class="skeletonCard">
+          <ion-card-header class="headerSkeleton">
+            <ion-skeleton-text animated class="imageSkeleton"></ion-skeleton-text>
           </ion-card-header>
-          <ion-card-content class="content-skeleton">
-            <ion-skeleton-text animated class="text-skeleton"></ion-skeleton-text>
-            <ion-skeleton-text animated class="text-skeleton"></ion-skeleton-text>
+          <ion-card-content class="contentSkeleton">
+            <ion-skeleton-text animated class="textSkeleton"></ion-skeleton-text>
+            <ion-skeleton-text animated class="textSkeleton"></ion-skeleton-text>
           </ion-card-content>
         </ion-card>
       </ion-col>

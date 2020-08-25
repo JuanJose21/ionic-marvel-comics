@@ -1,29 +1,26 @@
 <ion-card>
-  <ion-card-header class="header-card">
-    <ion-thumbnail class="image-card">
-      <ion-img 
-        [src]="comic.thumbnail.path + '/portrait_incredible.' + comic.thumbnail.extension"
-        [alt]="comic.title"
-      >
+  <ion-card-header class="headerCard">
+    <ion-thumbnail class="imageCard">
+      <ion-img [src]="comic.thumbnail.path + '/portrait_incredible.' + comic.thumbnail.extension" [alt]="comic.title">
       </ion-img>
     </ion-thumbnail>
-    <div class="container-information">
-      <ion-card-title class="title-card">{{comic.title}}</ion-card-title>
-      <ion-card-subtitle class="subtitle-card">{{comic.dates[0].date | date :'mediumDate'}}</ion-card-subtitle>
+    <div class="containerInformation">
+      <ion-card-title class="titleCard">{{comic.title}}</ion-card-title>
+      <ion-card-subtitle class="subtitleCard">{{comic.dates[0].date | date :'mediumDate'}}</ion-card-subtitle>
     </div>
   </ion-card-header>
-  <ion-card-content class="content-card">
-    <div class="container-buttons">
+  <ion-card-content class="contentCard">
+    <div class="containerButtons">
       <ion-button (click)="upQualification('like')" color="success">
-        <div class="description-button">
+        <div class="descriptionButton">
           <ion-icon name="thumbs-up-sharp"></ion-icon>
-          <ion-label class="count count-success">{{comic.like | number}}</ion-label>
+          <ion-label class="count countSuccess">{{comic.like | number}}</ion-label>
         </div>
       </ion-button>
       <ion-button (click)="upQualification('dislike')" color="danger">
-        <div class="description-button">
+        <div class="descriptionButton">
           <ion-icon name="thumbs-down-sharp"></ion-icon>
-          <ion-label class="count count-danger">{{comic.dislike | number}}</ion-label>
+          <ion-label class="count countDanger">{{comic.dislike | number}}</ion-label>
         </div>
       </ion-button>
     </div>

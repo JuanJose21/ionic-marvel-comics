@@ -1,19 +1,24 @@
-.image-logo {
-  margin: auto;
-  max-width: 110px;
+/**
+ * @since: 24/08/2020
+ * @author [JuanJose21]
+ */
+
+.imageLogo {
+	margin: auto;
+	max-width: 7rem;
 }
-.skeleton-card {
-  .header-skeleton {
-    .image-skeleton {
-      height: 200px;
-      width: 100%;
-    }
-  }
-  .content-skeleton {
-    display: flex;
-    flex-direction: row;
-    .text-skeleton {
-      margin: 0 2px;
-    }
-  }
+.skeletonCard {
+	.headerSkeleton {
+		.imageSkeleton {
+			height: 10rem;
+			width: 100%;
+		}
+	}
+	.contentSkeleton {
+		display: flex;
+		flex-direction: row;
+		.textSkeleton {
+			margin: 0 .2rem;
+		}
+	}
 }

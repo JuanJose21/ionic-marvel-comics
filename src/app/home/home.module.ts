@@ -6,7 +6,7 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 
-// import component
+/* import component */
 import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
@@ -19,4 +19,4 @@ import { ComponentsModule } from '../components/components.module';
   ],
   declarations: [HomePage]
 })
-export class HomePageModule {}
+export class HomePageModule { }
