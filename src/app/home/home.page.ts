@@ -36,8 +36,7 @@ export class HomePage {
     }
 
     this.listComics = JSON.parse(comicsStorage);
-
-    setTimeout(() => { this.validationSkeleton = false; }, 3000);    
+    this.validationSkeleton = false;
   }
 
   async setItemStorage(key, value) {
