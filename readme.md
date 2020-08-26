@@ -28,3 +28,31 @@ npm install
 ```
 ionic serve
 ```
+
+### Run app in device
+> remove the braces **{}** and replace **platform** depending on the device **(android - ios)**
+1. Build the app
+```
+ionic build
+```
+
+2. Build the app to platform
+```
+npx cap add {platform}
+```
+
+3. Copying Web Code
+```
+npx cap copy
+```
+
+4. Create icons and splash screen
+> Review implementation, does not create all the necessary files.
+```
+cordova-res {platform} --skip-config --copy
+```
+
+5. Running on platfom
+```
+npx cap open{platform}
+```
