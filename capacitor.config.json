@@ -1,6 +1,6 @@
 {
   "appId": "io.ionic.starter",
-  "appName": "ionic-marvel-comics",
+  "appName": "Marvel Comics",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
@@ -9,5 +9,8 @@
       "launchShowDuration": 0
     }
   },
-  "cordova": {}
+  "cordova": {},
+  "server": {
+    "cleartext": true
+  }
 }
