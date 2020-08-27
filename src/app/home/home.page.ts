@@ -28,17 +28,11 @@ export class HomePage {
 
         const json_comics = JSON.parse(comics_storage);
 
-        if (json_comics) {
-            for (let i = 0; i < json_comics.length; i++) {
-                const found_comic = comics.data.results.find(id => id.id === json_comics[i].id);
-                found_comic.like = json_comics[i].like;
-                found_comic.dislike = json_comics[i].dislike;
-            }
-        } else {
-            for (let i = 0; i < comics.data.results.length; i++) {
-                comics.data.results[i].like = 0;
-                comics.data.results[i].dislike = 0;
-            }
+        for (let i = 0; i < comics.data.results.length; i++) {
+            /* find like and dislike on localstorage */
+            const found_comic = json_comics ? json_comics.find(id => id.id === comics.data.results[i].id) : null;
+            comics.data.results[i].like = found_comic ? found_comic.like : 0;
+            comics.data.results[i].dislike = found_comic ? found_comic.dislike : 0;
         }
 
         await this.setItemStorage('comics', JSON.stringify(comics.data.results));
