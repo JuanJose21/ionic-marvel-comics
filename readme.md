@@ -46,13 +46,17 @@ npx cap add {platform}
 npx cap copy
 ```
 
-4. Create icons and splash screen
-> Review implementation, does not create all the necessary files.
+4. Create icons and splash screen.
+> Android and iOS
 ```
-cordova-res {platform} --skip-config --copy
+npm run resources
+```
+> Only platform
+```
+npm run resources-{platform}
 ```
 
 5. Running on platfom
 ```
-npx cap open{platform}
+npx cap open {platform}
 ```
